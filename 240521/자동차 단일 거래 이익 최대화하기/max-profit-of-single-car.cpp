@@ -12,6 +12,10 @@ int main() {
         low = price[0];
         high = price[1];
     }
+    else if(year == 1){
+        low = price[0]
+        high = price[0]
+    }
     else{
         low = price[1];
         high = price[0];
