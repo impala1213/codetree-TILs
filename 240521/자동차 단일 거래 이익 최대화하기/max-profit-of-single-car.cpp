@@ -28,6 +28,9 @@ int main() {
     if(high == low){
         cout << 0;
     }
-    cout << high - low;
+    else{
+        cout << high - low;
+    }
+
     return 0;
 }
