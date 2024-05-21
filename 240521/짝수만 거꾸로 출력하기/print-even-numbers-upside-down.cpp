@@ -9,7 +9,7 @@ int main() {
     }
     for(int i = count-1; i>=0;i--){
         if(numbers[i] % 2 == 0){
-            cout << numbers[i];
+            cout << numbers[i] << " ";
         }
     }
     return 0;
