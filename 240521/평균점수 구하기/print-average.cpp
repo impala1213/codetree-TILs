@@ -8,6 +8,8 @@ int main() {
         cin >> score[i];
         total += score[i];
     }
+    cout << fixed;
+    cout.precision(1);
     cout << total / 8;
     return 0;
 }
