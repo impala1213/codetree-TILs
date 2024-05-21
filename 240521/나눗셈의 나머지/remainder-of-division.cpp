@@ -10,7 +10,7 @@ int main() {
     }
     cin >> a;
     cin >> b;
-    while(a>=1){
+    while(a>1){
         remainder = a%b;
         a = a/b;
         list_remainder[remainder] += 1;
