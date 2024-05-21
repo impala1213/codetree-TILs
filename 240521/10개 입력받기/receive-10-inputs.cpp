@@ -6,11 +6,6 @@ int main() {
     int numbers[10];
     for (int i = 0; i<10;i++){
         cin >> numbers[i];
-        if (numbers[i] == 0){
-            for(i;i<10;i++){
-                numbers[i] = 0;
-            }
-            break;
         }
     }
     for(int i = 9; i >= 0; i--){
