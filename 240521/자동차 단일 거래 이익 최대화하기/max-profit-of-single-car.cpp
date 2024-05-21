@@ -8,19 +8,9 @@ int main() {
     for(int i = 0; i<year;i++){
         cin >> price[i];
     }
-    if(price[0] < price[1]){
-        low = price[0];
-        high = price[1];
-    }
-    else if(year == 1){
-        low = price[0];
-        high = price[0];
-    }
-    else{
-        low = price[1];
-        high = price[0];
-    }
-    for(int i = 2; i<year;i++){
+    low = price[0];
+    high = price[0];
+    for(int i = 1; i<year;i++){
         if(price[i] < low){
             low = price[i];
             high = low;
