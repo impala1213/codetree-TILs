@@ -1,39 +1,32 @@
 #include <iostream>
-#include <vector>
+
+#define MAX_N 15
+
 using namespace std;
 
-int findnext(int x, int y, int x_size, int y_size, char color, const vector<vector<char>>& board){
-    int count = 0;
-    for(int i = x+1; i < x_size-1; i++){
-        for(int j = y+1; j < y_size-1; j++){
-            if(board[i][j] != color){
-                count += 1;
-            }
-        }
-    }
-    return count;
-}
+int n, m;
+char grid[MAX_N][MAX_N];
 
 int main() {
-    int x_size, y_size;
-    cin >> x_size >> y_size;
-    vector<vector<char>> board(x_size, vector<char>(y_size));
-    for(int i=0; i<x_size ;i++){
-        for(int j=0; j<y_size; j++){
-            cin >> board[i][j];
-        }
-    }
-    int count = 0;
-    char color = board[0][0];
-    for(int i=0; i<x_size-1; i++){
-        for(int j=0; j<y_size-1; j++){
-            if(board[i][j] != color){
-                color = board[i][j];
-                count += findnext(i, j, x_size, y_size, color, board);
-            }
-        }
-    }
-    cout << count;
-
+    // 입력
+    cin >> n >> m;
+    for(int i = 0; i < n; i++)
+        for(int j = 0; j < m; j++)
+            cin >> grid[i][j];
+    
+    // 이동 시에 행과 열이 전부 증가하도록
+    // 모든 쌍을 다 잡아봅니다.
+    int cnt = 0;
+    for(int i = 1; i < n; i++)
+        for(int j = 1; j < m; j++)
+            for(int k = i + 1; k < n - 1; k++)
+                for(int l = j + 1; l < m - 1; l++)
+                    // 그 중 색깔이 전부 달라지는 경우에만 개수를 세줍니다.
+                    if(grid[0][0] != grid[i][j] && 
+                       grid[i][j] != grid[k][l] &&
+                       grid[k][l] != grid[n - 1][m - 1])
+                        cnt++;
+                        
+    cout << cnt;
     return 0;
 }
